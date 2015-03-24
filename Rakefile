@@ -2,6 +2,9 @@ require 'puppetlabs_spec_helper/rake_tasks'
 require 'puppet-lint/tasks/puppet-lint'
 require 'puppet-syntax/tasks/puppet-syntax'
 
+# Make sure puppet strict_variables is enabled
+ENV['STRICT_VARIABLES']='yes'
+
 # These two gems aren't always present, for instance
 # on Travis with --without development
 begin
@@ -27,6 +30,8 @@ exclude_paths = [
 ]
 PuppetLint.configuration.ignore_paths = exclude_paths
 PuppetSyntax.exclude_paths = exclude_paths
+
+
 
 desc "Run acceptance tests"
 RSpec::Core::RakeTask.new(:acceptance) do |t|
