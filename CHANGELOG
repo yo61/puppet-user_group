@@ -1,2 +1,5 @@
+2015-03024 Release 0.1.1
+- Remove Modulefile, it's not required and breaks librarian-puppet
+
 2015-03-23 Release 0.1.0
 - Initial release
