@@ -43,7 +43,7 @@ define user_group(
 
   if str2bool($create_user) == true {
 
-    $nologin_shell = $::user_with_group::params
+    $nologin_shell = $::user_group::params::nologin_shell
     $real_comment = $comment ? { undef => $name, default => $comment }
     $real_shell = $shell ? { undef => $nologin_shell, default => $shell }
 
