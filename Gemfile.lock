@@ -269,6 +269,9 @@ GEM
     rspec-mocks (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-puppet-facts (0.6.0)
+      facter
+      json
     rspec-support (3.2.2)
     rsync (1.0.9)
     serverspec (2.12.0)
@@ -330,6 +333,7 @@ DEPENDENCIES
   puppetlabs_spec_helper
   rake
   rspec-puppet!
+  rspec-puppet-facts
   travis
   travis-lint
   vagrant-wrapper
