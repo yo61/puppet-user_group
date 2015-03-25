@@ -1,4 +1,5 @@
-????-??-??-Release ?.?.?
+2015-03-25 Release 0.2.0
+- lots of work on spec tests and Travis CI testing
 - re-ordered keys in metadata.json
 
 2015-03-24 Release 0.1.2
