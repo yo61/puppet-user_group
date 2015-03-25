@@ -1,5 +1,7 @@
 2015-03-25 Release 0.2.0
-- lots of work on spec tests and Travis CI testing
+- enable Travis CI testing - fix up support files to ensure all tests pass
+- don't allow or use purge_ssh_keys on puppet < 3.6.0
+- use rspec-pupopet-facts to test on lots more OS combinations
 - re-ordered keys in metadata.json
 
 2015-03-24 Release 0.1.2
