@@ -11,6 +11,12 @@
     "user",
     "group"
   ],
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0 <5.0.0"
+    }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "CentOS",
@@ -58,12 +64,6 @@
         "12.04",
         "14.04"
       ]
-    }
-  ],
-  "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0 <5.0.0"
     }
   ]
 }
