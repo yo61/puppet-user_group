@@ -1,6 +1,6 @@
 {
   "name": "yo61-user_group",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Robin Bowees <robin.bowes@yo61.com>",
   "summary": "Convenience module to create users and groups",
   "license": "Apache-2.0",
