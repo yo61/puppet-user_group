@@ -1,4 +1,7 @@
 2015-03-25 Release 0.2.0
+- Fix up wrong version no. in CHANGELOG
+
+2015-03-25 Release 0.1.3
 - enable Travis CI testing - fix up support files to ensure all tests pass
 - don't allow or use purge_ssh_keys on puppet < 3.6.0
 - use rspec-pupopet-facts to test on lots more OS combinations
