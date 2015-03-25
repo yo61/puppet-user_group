@@ -47,7 +47,7 @@ define user_group(
     $real_comment = $comment ? { undef => $name, default => $comment }
     $real_shell = $shell ? { undef => $nologin_shell, default => $shell }
 
-    user { $name:
+    $parameters = {
       ensure         => $ensure,
       allowdupe      => $allowdupe,
       comment        => $real_comment,
@@ -56,11 +56,21 @@ define user_group(
       home           => $home,
       managehome     => $managehome,
       password       => $password,
-      purge_ssh_keys => $purge_ssh_keys,
       shell          => $real_shell,
       system         => $system,
       uid            => $uid,
     }
+
+    if versioncmp($::puppet_version, '3.6.0') >= 0 {
+      $parameters['purge_ssh_keys'] = $purge_ssh_keys
+    }
+    else {
+      if $purge_ssh_keys != undef {
+        fail('purge_ssh_keys is not valid on puppet versions < 3.6.0')
+      }
+    }
+
+    create_resources(user, {"${name}" => $parameters})
 
   }
 }
