@@ -54,6 +54,8 @@ GEM
     docker-api (1.20.0)
       excon (>= 0.38.0)
       json
+    domain_name (0.5.23)
+      unf (>= 0.0.5, < 1.0.0)
     ethon (0.7.3)
       ffi (>= 1.3.0)
     excon (0.44.4)
@@ -154,16 +156,24 @@ GEM
       multi_json (~> 1.0)
       net-http-persistent (>= 2.7)
       net-http-pipeline
-    google-api-client (0.8.2)
+    google-api-client (0.8.3)
       activesupport (>= 3.2)
       addressable (~> 2.3)
       autoparse (~> 0.3)
       extlib (~> 0.9)
       faraday (~> 0.9)
+      googleauth (~> 0.3)
       launchy (~> 2.4)
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
+    googleauth (0.3.0)
+      faraday (~> 0.9)
+      jwt (~> 1.4.1)
+      logging (~> 1.8)
+      memoist (~> 0.11.0)
+      multi_json (= 1.11.0)
+      signet (~> 0.6.0)
     guard (2.12.5)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -181,6 +191,8 @@ GEM
     highline (1.7.1)
     hitimes (1.2.2)
     hocon (0.0.7)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     inflecto (0.0.2)
     inifile (2.0.2)
@@ -194,7 +206,12 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    little-plugger (1.1.3)
+    logging (1.8.2)
+      little-plugger (>= 1.1.3)
+      multi_json (>= 1.8.4)
     lumberjack (1.0.9)
+    memoist (0.11.0)
     metaclass (0.0.4)
     metadata-json-lint (0.0.6)
       json
@@ -250,7 +267,8 @@ GEM
       builder
       nokogiri (>= 1.4.1)
       trollop
-    rest-client (1.7.3)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     retriable (1.4.1)
@@ -274,11 +292,11 @@ GEM
       json
     rspec-support (3.2.2)
     rsync (1.0.9)
-    serverspec (2.12.0)
+    serverspec (2.13.0)
       multi_json
       rspec (~> 3.0)
       rspec-its
-      specinfra (~> 2.23)
+      specinfra (~> 2.25)
     shellany (0.0.1)
     signet (0.6.0)
       addressable (~> 2.3)
@@ -289,7 +307,7 @@ GEM
     slop (3.6.0)
     spdx-licenses (1.0.0)
       json
-    specinfra (2.24.2)
+    specinfra (2.26.1)
       net-scp
       net-ssh
     thor (0.19.1)
