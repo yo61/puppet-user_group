@@ -1,3 +1,6 @@
+????-??-??-Release ?.?.?
+- re-ordered keys in metadata.json
+
 2015-03-24 Release 0.1.2
 - Fix variable typo not caught in tests because strict_variables was not
 enabled
