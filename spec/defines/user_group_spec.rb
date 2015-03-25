@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 common_facts = {
-  concat_basedir: '/tmp',
-  memorysize: '2 GB',
-  processorcount: '2',
+  :concat_basedir => '/tmp',
+  :memorysize => '2 GB',
+  :processorcount => '2',
 }
 
 supported_os = [
   {
-    kernel: 'Linux',
-    osfamily: 'RedHat',
-    operatingsystem: 'redhat',
-    operatingsystemrelease: '7.0',
+    :kernel => 'Linux',
+    :osfamily => 'RedHat',
+    :operatingsystem => 'redhat',
+    :operatingsystemrelease => '7.0',
   }
 ]
 
