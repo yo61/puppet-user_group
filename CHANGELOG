@@ -1,3 +1,8 @@
+2015-03-26 Release 0.2.1
+- Avoid re-assigning to a hash element to avoid a future deprecation
+- Fix setting of puppetversion fact in spec tests
+- Fix versioncmp test for purge_ssh_keys
+
 2015-03-25 Release 0.2.0
 - Fix up wrong version no. in CHANGELOG
 
