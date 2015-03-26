@@ -62,7 +62,7 @@ define user_group(
     }
 
     # only use purge_ssh_keys for puppet versions >= 3.6.0
-    if versioncmp($::puppetversion, '3.6.0') <= 0 {
+    if versioncmp($::puppetversion, '3.6.0') >= 0 {
       $parameters['purge_ssh_keys'] = $purge_ssh_keys
     }
     else {
