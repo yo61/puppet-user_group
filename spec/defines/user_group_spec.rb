@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe '::user_group', :type => :define do
   on_supported_os.each do |os, facts|
-    context "on #{os}" do
+    context "on #{os} with puppet v#{Puppet.version}" do
       let(:facts) do facts end
       let :default_resource_title do 'rspec_user' end
       let :default_params do {} end
