@@ -63,15 +63,16 @@ define user_group(
 
     # only use purge_ssh_keys for puppet versions >= 3.6.0
     if versioncmp($::puppetversion, '3.6.0') >= 0 {
-      $parameters['purge_ssh_keys'] = $purge_ssh_keys
+      $optional_parameters = { 'purge_ssh_keys' => $purge_ssh_keys }
     }
     else {
+      $optional_parameters = {}
       if $purge_ssh_keys != undef {
         fail('purge_ssh_keys is not valid on puppet versions < 3.6.0')
       }
     }
 
-    create_resources(user, {"${name}" => $parameters})
+    create_resources(user, {"${name}" => merge($parameters, $optional_parameters)})
 
   }
 }
