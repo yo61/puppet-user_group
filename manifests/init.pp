@@ -40,10 +40,10 @@ define user_group(
 
   if str2bool($create_group) == true {
     group { $group_name:
-            ensure => $ensure,
-            gid    => $group_id,
-        }
+      ensure => $ensure,
+      gid    => $group_id,
     }
+  }
 
   if str2bool($create_user) == true {
 
