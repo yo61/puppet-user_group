@@ -51,13 +51,19 @@ define user_group(
     $real_comment = $comment ? { undef => $name, default => $comment }
     $real_shell = $shell ? { undef => $nologin_shell, default => $shell }
 
+    if is_string($home) {
+      $real_home = $home
+    } else {
+      $real_home = $name ? { 'root' => '/root', default => "${basedir}/${name}" }
+    }
+
     $parameters = {
       ensure         => $ensure,
       allowdupe      => $allowdupe,
       comment        => $real_comment,
       gid            => $group_name,
       groups         => $groups,
-      home           => $home,
+      home           => $real_home,
       managehome     => $managehome,
       password       => $password,
       shell          => $real_shell,
