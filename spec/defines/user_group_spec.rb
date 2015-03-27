@@ -15,6 +15,15 @@ describe '::user_group', :type => :define do
         it { should contain_user_group(default_resource_title) }
         it { should contain_user(default_resource_title) }
         it { should contain_group(default_resource_title) }
+        it { should contain_anchor("#{default_resource_title}_first") }
+        it { should contain_anchor("#{default_resource_title}_last") }
+      end
+      describe "::user_group define with create_sshdir = true" do
+        let :params do { 
+            :create_sshdir => true
+        } end
+        it { should compile.with_all_deps }
+        it { should contain_file("/home/#{default_resource_title}/.ssh") }
       end
     end
   end

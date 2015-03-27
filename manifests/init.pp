@@ -54,7 +54,7 @@ define user_group(
     $real_comment = $comment ? { undef => $name, default => $comment }
     $real_shell = $shell ? { undef => $nologin_shell, default => $shell }
 
-    if is_string($home) {
+    if $home != undef {
       $real_home = $home
     } else {
       $real_home = $name ? { 'root' => '/root', default => "${basedir}/${name}" }
@@ -88,13 +88,14 @@ define user_group(
     create_resources(user, {"${name}" => merge($parameters, $optional_parameters)})
 
     if str2bool($create_sshdir) == true {
-      file{"${real_home}/${sshdir_name}":
+      $sshdir = "${real_home}/${sshdir_name}"
+      User[$name]->
+      file{$sshdir:
         ensure => directory,
         owner  => $name,
         group  => $group_name,
         mode   => '0700',
-      }->
-      User[$name]
+      }
     }
 
   }
