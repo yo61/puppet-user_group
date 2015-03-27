@@ -22,6 +22,9 @@ define user_group(
   $shell          = undef,
   $system         = undef,
   $uid            = undef,
+  $create_sshdir  = undef,
+  $sshdir_name    = '.ssh',
+  $basedir        = '/home',
 ) {
 
   include ::user_group::params
@@ -84,5 +87,16 @@ define user_group(
 
     create_resources(user, {"${name}" => merge($parameters, $optional_parameters)})
 
+    if str2bool($create_sshdir) == true {
+      file{"${real_home}/${sshdir_name}":
+        ensure => directory,
+        owner  => $name,
+        group  => $group_name,
+        mode   => '0700',
+      }->
+      User[$name]
+    }
+
   }
+
 }
