@@ -26,6 +26,10 @@ define user_group(
 
   include ::user_group::params
 
+  anchor{"${name}_first":}->
+  Class['::user_group:params']->
+  anchor{"${name}_last":}
+
   $group_id   = $gid ? { undef => $uid, default => $gid }
   $group_name = $gname ? { undef => $name, default => $gname }
 
