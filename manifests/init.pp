@@ -36,11 +36,6 @@ define user_group(
   $group_id   = $gid ? { undef => $uid, default => $gid }
   $group_name = $gname ? { undef => $name, default => $gname }
 
-  # additional groups must be created before the user resource
-  if $groups {
-    require( Group[$groups] )
-  }
-
   if str2bool($create_group) == true {
     group { $group_name:
       ensure => $ensure,
