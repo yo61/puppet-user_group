@@ -1,3 +1,6 @@
+2015-03-30 Release 0.2.3
+- Remove require of additional groups
+
 2015-03-27 Release 0.2.2
 - add capability to create user's .ssh dir
 
