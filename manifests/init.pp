@@ -40,6 +40,7 @@ define user_group(
     group { $group_name:
       ensure => $ensure,
       gid    => $group_id,
+      system => $system,
     }
   }
 
