@@ -24,7 +24,6 @@ define user_group(
   $system           = undef,
   $uid              = undef,
   $create_sshdir    = undef,
-  $tags             = undef,
   $sshdir_name      = '.ssh',
   $basedir          = '/home',
 ) {
@@ -43,7 +42,6 @@ define user_group(
       ensure => $ensure,
       gid    => $group_id,
       system => $system,
-      tags   => $tags,
     }
   }
 
@@ -72,7 +70,6 @@ define user_group(
       shell            => $real_shell,
       system           => $system,
       uid              => $uid,
-      tags             => $tags,
     }
 
     # only use purge_ssh_keys for puppet versions >= 3.6.0

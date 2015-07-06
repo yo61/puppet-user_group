@@ -1,3 +1,6 @@
+2015-07-06 Release 0.2.6
+- Remove 'tags' parameter. It should have been 'tag', and in any case is not actually needed
+
 2015-07-06 Release 0.2.5
 - Add new 'password_max_age' and 'tags' parameters
 
