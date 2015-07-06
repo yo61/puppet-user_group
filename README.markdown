@@ -62,7 +62,6 @@ Creates a user and (by default) a group with the same name.
 #####`shell`
 #####`system`
 #####`uid`
-#####`tags`
 
 ##Reference
 
