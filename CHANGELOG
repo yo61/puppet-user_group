@@ -1,3 +1,6 @@
+2015-07-06 Release 0.2.5
+- Add new 'password_max_age' and 'tags' parameters
+
 2015-04-01 Release 0.2.4
 - Pass "system" parameter to group resource (to create a system group)
 

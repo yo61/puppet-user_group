@@ -57,10 +57,12 @@ Creates a user and (by default) a group with the same name.
 #####`home`
 #####`managehome`
 #####`password`
+#####`password_max_age`
 #####`purge_ssh_keys`
 #####`shell`
 #####`system`
 #####`uid`
+#####`tags`
 
 ##Reference
 

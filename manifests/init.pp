@@ -7,24 +7,26 @@
 #  ###TODO: add list of parameters here
 #
 define user_group(
-  $ensure         = present,
-  $create_group   = true,
-  $create_user    = true,
-  $gname          = undef,
-  $allowdupe      = undef,
-  $comment        = undef,
-  $gid            = undef,
-  $groups         = undef,
-  $home           = undef,
-  $managehome     = undef,
-  $password       = undef,
-  $purge_ssh_keys = undef,
-  $shell          = undef,
-  $system         = undef,
-  $uid            = undef,
-  $create_sshdir  = undef,
-  $sshdir_name    = '.ssh',
-  $basedir        = '/home',
+  $ensure           = present,
+  $create_group     = true,
+  $create_user      = true,
+  $gname            = undef,
+  $allowdupe        = undef,
+  $comment          = undef,
+  $gid              = undef,
+  $groups           = undef,
+  $home             = undef,
+  $managehome       = undef,
+  $password         = undef,
+  $password_max_age = undef,
+  $purge_ssh_keys   = undef,
+  $shell            = undef,
+  $system           = undef,
+  $uid              = undef,
+  $create_sshdir    = undef,
+  $tags             = undef,
+  $sshdir_name      = '.ssh',
+  $basedir          = '/home',
 ) {
 
   include ::user_group::params
@@ -41,6 +43,7 @@ define user_group(
       ensure => $ensure,
       gid    => $group_id,
       system => $system,
+      tags   => $tags,
     }
   }
 
@@ -57,17 +60,19 @@ define user_group(
     }
 
     $parameters = {
-      ensure         => $ensure,
-      allowdupe      => $allowdupe,
-      comment        => $real_comment,
-      gid            => $group_name,
-      groups         => $groups,
-      home           => $real_home,
-      managehome     => $managehome,
-      password       => $password,
-      shell          => $real_shell,
-      system         => $system,
-      uid            => $uid,
+      ensure           => $ensure,
+      allowdupe        => $allowdupe,
+      comment          => $real_comment,
+      gid              => $group_name,
+      groups           => $groups,
+      home             => $real_home,
+      managehome       => $managehome,
+      password         => $password,
+      password_max_age => $password_max_age,
+      shell            => $real_shell,
+      system           => $system,
+      uid              => $uid,
+      tags             => $tags,
     }
 
     # only use purge_ssh_keys for puppet versions >= 3.6.0
